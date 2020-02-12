@@ -9,16 +9,20 @@ export default function App() {
         <Header
           centerComponent={{ text: 'OpenWheel', style:{color: '#fff'} }}
         />
-
+      <Text>Ride statistics coming soon</Text>
       <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
         <View style={styles.valueSelector}>
           <Text>Proportional</Text>
           <Spinner/>
-          <Spinner/>
-          <Spinner/>
         </View> 
-      
+        <View style={styles.valueSelector}>
+          <Text>Integral</Text>
+          <Spinner/>
+        </View>
+        <View style={styles.valueSelector}>
+          <Text>Derivative</Text>
+          <Spinner/>
+        </View>
       </View>
              
     </View>
@@ -34,8 +38,10 @@ const styles = StyleSheet.create({
   },
   valueSelector: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-around'
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'left',
+    padding: '1em',
   },
 });
 
