@@ -9,11 +9,15 @@ export default function App() {
         <Header
           centerComponent={{ text: 'OpenWheel', style:{color: '#fff'} }}
         />
-      <Text>Ride statistics coming soon</Text>
       <View style={styles.container}>
+
+        <Text style={{color:'#ffdead'}}>Ride statistics coming soon</Text>
         <View style={styles.valueSelector}>
           <Text>Proportional</Text>
-          <Spinner/>
+          <Spinner onNumChange={(event) => {
+            porportional = proportional*event;
+            console.log("Proportional: ", proportional);
+          }}/>
         </View> 
         <View style={styles.valueSelector}>
           <Text>Integral</Text>
@@ -29,6 +33,7 @@ export default function App() {
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -40,7 +45,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-around',
-    alignItems: 'left',
+    alignItems: 'flex-start',
     padding: '1em',
   },
 });
